@@ -1,0 +1,39 @@
+.main__ourBeans {
+    padding: 70px 0px 60px 0px;
+    .ourBeans {
+        &__block {
+            margin-left: 79px;
+            max-width: 697px;
+            margin: 0px auto 0px auto;
+        }
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__text {
+            margin: 25px 0px 0px 0px;
+            max-width: 346px;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #000000;
+            p {
+                &:nth-child(1) {
+                    margin-bottom: 20px;
+                }
+                &:nth-child(2) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &__line {
+            margin: 60px auto 0px auto;
+            width: 240px;
+            height: 0px;
+            border: 1px solid #000000;
+        }
+    }
+}
+
+
+

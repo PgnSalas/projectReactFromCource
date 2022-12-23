@@ -1,0 +1,30 @@
+.menu {
+    position: relative;
+    z-index: 20;
+    &__list {
+        display: flex;
+        // justify-content: center;
+        li {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+            cursor: pointer;
+            &:not(:last-child) {
+                margin: 0px 40px 0px 0px;
+            }
+            .menu__link {
+                color: #FFFFFF;
+            }
+            
+            .menu__link_black {
+                color: #000;
+            }
+        }
+    }
+}
+
+.menu__img {
+    position: absolute;
+    z-index: 25;
+}
