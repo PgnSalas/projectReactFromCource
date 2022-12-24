@@ -1,11 +1,12 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
 
 import FooterBlock from '../../readyBlocks/footerBlock/footerBlock.js';
-// SCSS 
-import './footer.scss';
 
-const Footer = (props) => {
+// SCSS
+import './footerTwo.scss';
 
+const FooterTwo = (props) => {
+    
     return (
         <Fragment>
             {FooterBlock(props)}
@@ -13,4 +14,4 @@ const Footer = (props) => {
     )
 }
 
-export default Footer;
+export default FooterTwo;

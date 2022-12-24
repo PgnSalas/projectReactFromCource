@@ -1,6 +1,12 @@
+import { Component } from 'react';
+import Cards from '../../readyBlocks/cards/cards.js';
+
+// IMG
+import allCoff from '../../img/allCoff.png'; 
 
 // SCSS
 import './filter.scss';
+import '../../firstPage/ourBest/ourBest.scss';
 
 const Filter = (props) => {
 
@@ -10,15 +16,29 @@ const Filter = (props) => {
         {name: 'Columbia', label: 'Columbia'},
     ];
 
-
     const createButtons = btnsFilter.map(({name, label}) => {
         return (
             <button 
             type="button"
-            className=""
+            className="filter__buttons"
             key={name}>
             {label}
             </button>
+        )
+    })
+
+    const buttons = [
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Kenya", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Columbia", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
+    ]
+
+    const createBtns = buttons.map(({src, text, country, price}) => {
+        return (
+            Cards(props, {src, text, country, price})
         )
     })
 
@@ -29,9 +49,12 @@ const Filter = (props) => {
                     <label htmlFor="name" className="filter__label_input">Lookiing for</label>
                     <input type="text" className="filter__input"  placeholder="start typing here..." name="name"/>
 
-                    <label htmlFor="">Or filter</label>
+                    <label htmlFor="" className="filter__label_input label_2">Or filter</label>
                     {createButtons}
                 </form>
+                <div className="filter__wrapper">
+                    {createBtns}
+                </div>
             </div>
         </div>
     )

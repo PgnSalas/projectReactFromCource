@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+/.gitignore
+/package-lock.json
+/package.json
+
 # production
 /build
 
