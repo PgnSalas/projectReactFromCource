@@ -2,9 +2,9 @@
 import './cards.scss';
 
 const Cards = (props, obj) => {
-    const {src, text, country, price} = obj;
+    const {src, text, country, price, key} = obj;
     return (
-        <div className="item__body item">
+        <div className="item__body item" key={key}>
             <div className="item__image">
                 <img src={src} alt="" />
             </div>

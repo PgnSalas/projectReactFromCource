@@ -1,65 +1,41 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 // FIRST PAGE
 import './app.scss';
-import Header from '../firstPage/header/header.js';
-import Main from '../firstPage/main/main.js';
+// import Header from '../firstPage/header/header.js';
+// // import Main from '../firstPage/main/main.js';
+// import AboutUs from '../firstPage/aboutUs/aboutUs.js';
+// import OurBest from '../firstPage/ourBest/ourBest.js';
 import Footer from '../firstPage/footer/footer.js'; 
 
 
-// SECOND PAGE
-import HeaderTwo from '../secondPage/headerTwo/headerTwo.js';
-import MainSecond from '../secondPage/mainSecond/mainSecond.js';
-import FooterTwo from '../secondPage/footerTwo/footerTwo.js';
+// // SECOND PAGE
+// import HeaderTwo from '../secondPage/headerTwo/headerTwo.js';
+// // import MainSecond from '../secondPage/mainSecond/mainSecond.js';
+// import OurBeans from '../secondPage/ourBeans/ourBeans.js';
+// import Filter from '../secondPage/filter/filter.js';
+// import FooterTwo from '../secondPage/footerTwo/footerTwo.js';
+
+import {OnePage, TwoPage} from '../pages';
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      header: <Header newBlock={this.newBlock}></Header>,
-      main: <Main></Main>,
-      footer: <Footer></Footer>,
-      filter: 'first-page'
-    }
-  }
+const App = () => {
 
-  newBlock = (e) => {
-    e.preventDefault();
-    this.setState(state => ({
-      header: <HeaderTwo></HeaderTwo>,
-      main: <MainSecond></MainSecond>,
-      footer: <FooterTwo></FooterTwo>
-    }))
-  }
 
-  nextPage = (items, filter) => {
-    switch (filter) {
-      case 'second-page':
-        return this.setState(state => {
-          header: <HeaderTwo></HeaderTwo>
-        })
-      case 'third-page':
-        return this.setState(state => {
-          main: <MainSecond></MainSecond>
-        })
-      case 'third-page':
-        return this.setState(state => {
-          footer: <FooterTwo></FooterTwo>
-        })
-    }
-  }
-
-  render() {
-    const {header, headerTwo, mainTwo, footerTwo, main, footer} = this.state;
     return (
-      <div className='wrapper'>
-        {header}
-        {main}
-        {footer}
-      </div>
+      <Router>
+        <div className='wrapper'>
+          <main>
+            <Routes>
+              <Route path="/" element={<OnePage></OnePage>}/>
+              <Route path="/twoPage" element={<TwoPage></TwoPage>}/>
+            </Routes>      
+          </main>
+        <Footer></Footer>
+        </div>
+      </Router>
     );
-  }
 }
 
 export default App;

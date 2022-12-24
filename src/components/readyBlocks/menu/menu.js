@@ -1,5 +1,6 @@
 import React, { useTransition } from "react";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 // SCSS
 import './menu.scss';
@@ -7,6 +8,7 @@ import './menu.scss';
 const Menu = (props, url, distanceImg, distanceBlock, blackColor, marg) => {
     const {positImg, zIndImg, topImg, leftImg} = distanceImg;
     const {leftBlock, justifyBlock} = distanceBlock;
+    const {newBlock, nextPage} = props;
 
     let linkClass = "menu__link";
     if (blackColor) {
@@ -19,13 +21,26 @@ const Menu = (props, url, distanceImg, distanceBlock, blackColor, marg) => {
         {clas: linkClass, text: 'For your pleasure', atrib: 'third-page'},
     ]
 
-    const createLink = menuLink.map(({clas, text, atrib}) => {
-
-        return (
-            <li>
-                <a onClick={(e) => props.newBlock(e)} href="" key={atrib} className={clas}>{text}</a>
-            </li>
-        )
+    const createLink = menuLink.map((item, index) => {
+        if (index === 0) {
+            return (
+                <li key={item.atrib}>
+                    <Link  to="/" className={item.clas}>{item.text}</Link>
+                </li>   
+            )
+        } else if (index === 1) {
+            return (
+                <li key={item.atrib}>
+                    <Link  to="/twoPage" className={item.clas}>{item.text}</Link>
+                </li>   
+            )
+        } else if (index === 2) {
+                return (
+                    <li key={item.atrib}>
+                        <a className={item.clas}>{item.text}</a>
+                    </li> 
+                )
+        }
     })
 
     return (
@@ -34,9 +49,6 @@ const Menu = (props, url, distanceImg, distanceBlock, blackColor, marg) => {
             <nav className='menu' style={{marginBottom: marg}}>
                 <ul className='menu__list' style={{marginLeft: leftBlock, justifyContent: justifyBlock}}>
                     {createLink}
-                    {/* <li><a href="" className={linkClass}>Coffee house</a></li> */}
-                    {/* <li><a href="" className={linkClass} onClick={(e) => props.newBlock(e)}>Our coffee</a></li> */}
-                    {/* <li><a href="" className={linkClass}>For your pleasure</a></li> */}
                 </ul>
             </nav>
         </Fragment>

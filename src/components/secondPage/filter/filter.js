@@ -28,17 +28,17 @@ const Filter = (props) => {
     })
 
     const buttons = [
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Kenya", price: '6.99$'},
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Columbia", price: '6.99$'},
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
-        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$'},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$', key: 1},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Kenya", price: '6.99$', key: 2},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Columbia", price: '6.99$', key: 3},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$', key: 4},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$', key: 5},
+        {src: allCoff, text: 'AROMISTICO Coffee 1 kg', country: "Brazil", price: '6.99$', key: 6},
     ]
 
-    const createBtns = buttons.map(({src, text, country, price}) => {
+    const createBtns = buttons.map(({src, text, country, price, key}) => {
         return (
-            Cards(props, {src, text, country, price})
+            Cards(props, {src, text, country, price, key})
         )
     })
 
