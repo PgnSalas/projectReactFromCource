@@ -1,6 +1,6 @@
 import React, { useTransition } from "react";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // SCSS
 import './menu.scss';
@@ -25,13 +25,13 @@ const Menu = (props, url, distanceImg, distanceBlock, blackColor, marg) => {
         if (index === 0) {
             return (
                 <li key={item.atrib}>
-                    <Link  to="/" className={item.clas}>{item.text}</Link>
+                    <NavLink exact activeStyle={{'color': 'red'}} to="/" className={item.clas}>{item.text}</NavLink>
                 </li>   
             )
         } else if (index === 1) {
             return (
                 <li key={item.atrib}>
-                    <Link  to="/twoPage" className={item.clas}>{item.text}</Link>
+                    <NavLink exact activeStyle={{'color': 'red'}} to="/ourCoffe" className={item.clas}>{item.text}</NavLink>
                 </li>   
             )
         } else if (index === 2) {

@@ -29,7 +29,7 @@ const App = () => {
           <main>
             <Routes>
               <Route path="/" element={<OnePage></OnePage>}/>
-              <Route path="/twoPage" element={<TwoPage></TwoPage>}/>
+              <Route path="/ourCoffe" element={<TwoPage></TwoPage>}/>
             </Routes>      
           </main>
         <Footer></Footer>
